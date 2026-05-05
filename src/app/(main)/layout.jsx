@@ -5,11 +5,11 @@ import NavBar from "@/components/shared/NavBar";
 const LayoutPage = ({ children }) => {
   return (
     <div>
-      <>
+      
        <Header />
         <NavBar />
         {children}
-      </>
+  
     </div>
   );
 };
