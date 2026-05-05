@@ -4,7 +4,7 @@ import NavBar from "@/components/shared/NavBar";
 
 const LayoutPage = ({ children }) => {
   return (
-    <div>
+    <div className="container mx-auto">
       
        <Header />
         <NavBar />
