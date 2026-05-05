@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import user from '@/assets/user.png';
+import NavLink from './NavLink';
 
 const NavBar = () => {
     return (
@@ -12,13 +12,13 @@ const NavBar = () => {
             <div>
                 <ul className='flex justify-center text-center gap-3 items-center mx-auto lg:ml-40'>
                     <li>
-                        <Link href="/">Home</Link>
+                        <NavLink href='/'>Home</NavLink>
                     </li>
                     <li>
-                        <Link href='#'>About</Link>
+                        <NavLink href='/about'>About</NavLink>
                     </li>
                     <li>
-                        <Link href='#'>Career</Link>
+                        <NavLink href='/career' className="text-yellow-300">Career</NavLink>
                     </li>
                 </ul>
             </div>
