@@ -22,7 +22,7 @@ const CateGoryIdPage = async({params}) => {
       <h2 className='text-xl font-semibold mb-5'>Dragon News Home</h2>
         <div >
             {categoryNews.length > 0 ? 
-              categoryNews.map((news) => <NewsBar key={news._id} news={news} /> ) : <p className='text-center text-2xl mt-20'>No news found for this category.</p>}
+              categoryNews.map((news) => <NewsBar key={news._id} news={news} /> ) : <p className='text-center flex min-h-[40vh] text-3xl items-center justify-center text-gray-500 mt-20 font-bold'>No news found for this category !!</p>}
         </div>
       </div>
       <div className="col-span-2">  
