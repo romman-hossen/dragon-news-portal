@@ -1,9 +1,37 @@
+import Image from 'next/image';
 import React from 'react';
+import { CiBookmark, CiShare2 } from 'react-icons/ci';
 
 const NewsBar = ({news}) => {
+    console.log(news,'this is news bar');
     return (
-        <div className='p-5 border mb-5'>
-            <h2>{news.title}</h2>
+        <div className='mb-5'>
+           <div className="card bg-base-100  shadow-sm">
+            <div className='flex justify-between items-center bg-gray-100 p-4 rounded-tl-lg rounded-tr-lg'>
+        <div className='flex items-center gap-3'>
+            <Image src={news.author?.img} alt={news?.author?.name || "Reporter image"} height={40} width={40} className='rounded-full '/>
+            <div>
+                <h3 className='font-semibold'>{news.author?.name}</h3>
+                <p className='text-gray-500'>{news.author?.published_date}</p>
+            </div>
+        </div>
+        <div className='text-2xl flex gap-3 items-center text-gray-500'>
+            <CiShare2 />
+
+            <CiBookmark />
+        </div>
+
+    </div>
+  <div className="card-body border border-gray-300 border-t-0">
+    
+    <h2 className="text-xl font-bold">{news.title}</h2>
+    
+    <figure>
+    <Image src={news.image_url} alt={news?.title || "News image"} height={300} width={500} className='rounded-lg w-full mt-5'/>
+  </figure>
+  </div>
+  
+</div>
             
         </div>
     );
