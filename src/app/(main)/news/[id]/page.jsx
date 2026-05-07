@@ -4,13 +4,26 @@ import Image from "next/image";
 import Link from "next/link";
 import { GoArrowLeft } from "react-icons/go";
 
+export const  generateMetadata =async ({params,}) =>{
+      const {id} = await params;
+         const news = await getNewsDetails(id);
+         return{
+              title: news.title,
+               description: news.description,
+         }
+    // console.log(params,'this is id page');
+    // title:"Dragon News - News Details",
+    // description:"This is Dragon news About Page"
+};
+
+
 const IdPage =async ({params}) => {
     // console.log(params,'this is id page');
     const {id} = await params;
     // console.log(id,'this is id page');
     const newsDetails = await getNewsDetails(id);
     // const data = newsDetails.data;
-    console.log(newsDetails,'this is news details');
+    // console.log(newsDetails,'this is news details');
     
     return (
         <div className="grid grid-cols-8 mt-8 mb-20 gap-5">
