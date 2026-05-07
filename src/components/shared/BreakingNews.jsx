@@ -11,7 +11,7 @@ const BreakingNews =async () => {
         <div className="flex items-center gap-5 bg-gray-100 p-4 rounded-sm">
             <button className='bg-pink-600 btn text-white  rounded block '>Latest</button>
             <Marquee pauseOnHover={true} speed={100}>
-                {news.map((news) => <span key={news._id} className="mx-10 flex items-center gap-2"><TbReportSearch className="text-lg"/>{news.title} !!</span>)}
+                {news.map((news) => <span key={news._id} className="mx-10 flex items-center gap-1"><TbReportSearch className="text-lg"/>Breaking News : {news.title} !!</span>)}
                 {/* <p className="text-lg font-medium text-gray-800">{news.title}</p> */}
             </Marquee>
             

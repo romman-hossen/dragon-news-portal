@@ -42,7 +42,7 @@ const NewsBar = ({ news }) => {
           </figure>
           <div>
             <p className="text-gray-500 text-lg line-clamp-3">{news.details}</p>
-            <Link href="/ids">
+            <Link href={`/news/${news._id}`} className="block mt-3">
             <button className="text-orange-400 cursor-pointer text-lg font-semibold">Read More </button>
             </Link>
           </div>
