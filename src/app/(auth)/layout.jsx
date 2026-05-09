@@ -4,7 +4,7 @@ import { montserrat } from "../layout";
 
 const LayoutPage = ( {children}) => {
     return (
-        <div className={`${montserrat.className}`}>
+        <div className={`${montserrat.className} bg-slate-50 min-h-screen`}>
            <NavBar />
            {children} 
         </div>

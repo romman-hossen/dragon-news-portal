@@ -1,14 +1,14 @@
 import Image from 'next/image';
 import user from '@/assets/user.png';
 import NavLink from './NavLink';
+import Link from 'next/link';
 
 const NavBar = () => {
     return (
         <div className='flex  items-center justify-between mt-7'>
             <div>
 
-            </div>
-           
+            </div>          
             <div>
                 <ul className='flex justify-center text-center gap-3 items-center mx-auto lg:ml-40'>
                     <li>
@@ -24,7 +24,9 @@ const NavBar = () => {
             </div>
             <div className='flex items-center justify-center  gap-3'>
                 <Image src={user} alt='User'/>
+                <Link href='/login'>
                 <button className='px-10 py-4 bg-black/50 text-white cursor-pointer font-semibold'>Login</button>
+                </Link>
 
             </div>
             
