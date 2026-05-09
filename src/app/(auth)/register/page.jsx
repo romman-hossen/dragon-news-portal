@@ -68,7 +68,7 @@ const RegisterPage = () => {
             <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>
           )}
 
-        <button className="btn w-full bg-slate-800 text-white">Register</button>
+        <button  className="btn w-full bg-slate-800 text-white">Register</button>
       </form>
     </div>
     );
