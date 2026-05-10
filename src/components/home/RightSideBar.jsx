@@ -1,10 +1,18 @@
+"use client";
+import { authClient } from "@/lib/auth-client";
 import React from "react";
 
 const RightSideBar = () => {
+  const handleGoogleSignIn = async () =>{
+    const data = await authClient.signIn.social({
+    provider: "google",
+  });
+  console.log(data)
+  }
   return (
     <div className="flex flex-col">
       {/* Google */}
-      <button className="btn bg-white text-sky-400 border-sky-400 mb-5 rounded-lg">
+      <button onClick={handleGoogleSignIn} className="btn bg-white text-sky-400 border-sky-400 mb-5 rounded-lg">
         <svg
           aria-label="Google logo"
           width="16"
