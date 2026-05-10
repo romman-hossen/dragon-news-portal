@@ -4,7 +4,6 @@ import avatar from "@/assets/user.png";
 import NavLink from "./NavLink";
 import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
-import { use } from "react";
 
 const NavBar = () => {
   const {
@@ -40,7 +39,7 @@ const NavBar = () => {
       ) : user ? (
         <div className="flex items-center justify-center gap-3">
             <h2 className="text-gray-500">Welcome,<br />{user.name}</h2>
-          <Image src={user.image || avatar} alt="User" width={60} height={60} className="rounded-full"/>
+          <Image src={user?.image || avatar} alt="User" width={60} height={60} className="rounded-full"/>
           <button className="px-10 py-4 bg-black/50 text-white cursor-pointer font-semibold" onClick={async() =>await authClient.signOut()}>
             Logout
           </button>
