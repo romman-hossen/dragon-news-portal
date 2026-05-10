@@ -1,4 +1,5 @@
 "use client";
+import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
 import React from "react";
 import { useForm } from "react-hook-form";
@@ -10,17 +11,30 @@ import { useForm } from "react-hook-form";
 const LoginPage = () => {
   const { register,
        handleSubmit,
-       formState: { errors}
+       formState: {errors}
      } = useForm();
-  const handleLoginSubmit = (data) => {
-    console.log(data);
-  };
+   const handleLoginSubmit = async (data) => {
+      console.log(data);
+      const { data: res, error } = await authClient.signIn.email({
+        email: data.email, // required
+        password: data.password, // required
+        rememberMe: true,
+        callbackURL: "http://localhost:3000",
+      });
+      console.log(res, error);
+      if (error) {
+        alert(error.message);
+      }
+      if(res){
+        alert("Login Successful");
+        redirect('/')
+      } 
+    };
   //   const handleSubmit = (e) => {
   //     e.preventDefault();
   //     const formData = new FormData(e.target);
   //     console.log(formData)
   //     const email = e.target.email.value;
-
   // };
   return (
     <div className="md:min-h-[70vh] mt-20 bg-white max-w-3xl mx-5 md:mx-auto flex flex-col justify-center p-8 md:p-40 shadow rounded-lg">
